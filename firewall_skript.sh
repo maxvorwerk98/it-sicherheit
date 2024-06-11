@@ -18,13 +18,13 @@ FUNCTION set_firewall_rules(option) {
             iptables.APPEND_RULE(INPUT, "-p tcp --dport 80 -j ACCEPT")  # HTTP 
             iptables.APPEND_RULE(INPUT, "-p tcp --dport 443 -j ACCEPT")  # HTTPS
         DEFAULT:
-            PRINT("Ungültige Option: " + option)
+            PRINT("Invalid option: " + option)
             EXIT(1)
     }
 }
 
 IF ARGS.LENGTH() != 1 THEN {
-    PRINT("Bitte geben Sie eine Option an: open, close, standard")
+    PRINT("Please select a valid option: open, close, standard")
     EXIT(1)
 }
 
