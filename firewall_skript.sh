@@ -12,11 +12,11 @@ FUNCTION set_firewall_rules(option) {
             iptables.SET_POLICY(OUTPUT, DROP)
         CASE "standard":
             iptables.SET_POLICY(INPUT, DROP)
-            iptables.APPEND_RULE(INPUT, "-i lo -j ACCEPT")  # Loopback erlauben
-            iptables.APPEND_RULE(INPUT, "-m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT")  # Verbindungen erlauben
-            iptables.APPEND_RULE(INPUT, "-p tcp --dport 22 -j ACCEPT")  # SSH erlauben
-            iptables.APPEND_RULE(INPUT, "-p tcp --dport 80 -j ACCEPT")  # HTTP erlauben
-            iptables.APPEND_RULE(INPUT, "-p tcp --dport 443 -j ACCEPT")  # HTTPS erlauben
+            iptables.APPEND_RULE(INPUT, "-i lo -j ACCEPT")  # Loopback 
+            iptables.APPEND_RULE(INPUT, "-m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT")  # Verbindungstabellen
+            iptables.APPEND_RULE(INPUT, "-p tcp --dport 22 -j ACCEPT")  # SSH 
+            iptables.APPEND_RULE(INPUT, "-p tcp --dport 80 -j ACCEPT")  # HTTP 
+            iptables.APPEND_RULE(INPUT, "-p tcp --dport 443 -j ACCEPT")  # HTTPS
         DEFAULT:
             PRINT("Ungültige Option: " + option)
             EXIT(1)
