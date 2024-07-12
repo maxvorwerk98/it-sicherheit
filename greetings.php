@@ -12,7 +12,7 @@
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = htmlspecialchars($_POST["name"], ENT_QUOTES, 'UTF-8');
+        $name = $_POST["name"];
         echo "<div id='greeting'>Hallo, " . $name . "!</div>";
     }
     ?>
